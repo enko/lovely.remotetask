@@ -13,7 +13,7 @@
 ##############################################################################
 """Task Service Management Views
 
-$Id$
+$Id: service.py 98869 2009-04-05 14:22:47Z zagy $
 """
 __docformat__ = 'restructuredtext'
 

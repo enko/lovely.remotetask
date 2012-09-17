@@ -13,7 +13,7 @@
 ##############################################################################
 """Task Service testing tools
 
-$Id$
+$Id: testing.py 83297 2008-01-29 14:40:06Z adamg $
 """
 __docformat__ = "reStructuredText"
 

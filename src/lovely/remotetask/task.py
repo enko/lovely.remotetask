@@ -13,7 +13,7 @@
 ##############################################################################
 """Task Service Implementation
 
-$Id$
+$Id: task.py 77285 2007-07-02 06:37:39Z jukart $
 """
 __docformat__ = 'restructuredtext'
 

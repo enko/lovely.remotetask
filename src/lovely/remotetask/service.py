@@ -23,6 +23,7 @@ from zope.app.container import contained
 from zope.app.publication.zopepublication import ZopePublication
 from zope.component.interfaces import ComponentLookupError
 from zope.traversing.api import getParents
+from OFS.SimpleItem import SimpleItem
 import BTrees
 import datetime
 import logging
@@ -40,7 +41,7 @@ log = logging.getLogger('lovely.remotetask')
 storage = threading.local()
 
 
-class TaskService(contained.Contained, persistent.Persistent):
+class TaskService(SimpleItem): #contained.Contained, persistent.Persistent
     """A persistent task service.
 
     The available tasks for this service are managed as utilities.
@@ -160,10 +161,7 @@ class TaskService(contained.Contained, persistent.Persistent):
         if self._scheduledQueue is None:
             self._scheduledQueue = zc.queue.PersistentQueue()
         # Create the path to the service within the DB.
-        servicePath = [parent.__name__ for parent in getParents(self)
-                       if parent.__name__]
-        servicePath.reverse()
-        servicePath.append(self.__name__)
+        servicePath = list(self.getPhysicalPath())[1:]
         # Start the thread running the processor inside.
         processor = self.processorFactory(
             self._p_jar.db(), servicePath, **self.processorArguments)
@@ -197,8 +195,7 @@ class TaskService(contained.Contained, persistent.Persistent):
         """Return name of the processing thread."""
         # This name isn't unique based on the path to self, but this doesn't
         # change the name that's been used in past versions.
-        path = [parent.__name__ for parent in getParents(self)
-                if parent.__name__]
+        path = list(self.getPhysicalPath())
         path.append('remotetasks')
         path.reverse()
         path.append(self.__name__)

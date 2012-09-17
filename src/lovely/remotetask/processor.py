@@ -13,7 +13,7 @@
 ##############################################################################
 """Processor Implementations
 
-$Id$
+$Id: processor.py 110870 2010-04-14 12:38:58Z zagy $
 """
 __docformat__ = 'restructuredtext'
 import logging
@@ -80,6 +80,7 @@ class SimpleProcessor(object):
 
     def call(self, method, args=(), errorValue=ERROR_MARKER):
         # Create the path to the method.
+        ## TODO Der Path stimmt nicht und ich habe ne idee wieso!!
         path = self.servicePath[:] + [method]
         path.reverse()
         # Produce a special processor event to be sent to the publisher.

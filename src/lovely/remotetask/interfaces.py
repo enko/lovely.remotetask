@@ -13,7 +13,7 @@
 ##############################################################################
 """Task Service Interfaces
 
-$Id$
+$Id: interfaces.py 97413 2009-03-02 09:47:32Z zagy $
 """
 __docformat__ = 'restructuredtext'
 from zope import interface

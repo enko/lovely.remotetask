@@ -1,56 +1,58 @@
 <configure
     xmlns="http://namespaces.zope.org/browser"
-    xmlns:zope="http://namespaces.zope.org/zope">
+    xmlns:zope="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml">
 
   <resourceDirectory
       name="lovely-remotetask-icons"
       directory="icons"
       />
 
-  <addMenuItem
-      class="..service.TaskService"
-      title="Remote Task Service"
-      description="A Remote Task Service"
-      permission="zope.ManageContent"
-      />
+  <!-- <addMenuItem -->
+  <!--     class="..service.TaskService" -->
+  <!--     title="Remote Task Service" -->
+  <!--     description="A Remote Task Service" -->
+  <!--     permission="zope.ManageContent" -->
+  <!--     /> -->
 
-  <page
-      name="jobs.html"
-      for="..interfaces.ITaskService"
-      class=".service.JobsOverview"
-      permission="zope.ManageContent"
-      menu="zmi_views" title="Jobs"
-      />
+  <!-- zmi_views is unknown for some reason… ->
+  <!-- <page -->
+  <!--     name="jobs.html" -->
+  <!--     for="..interfaces.ITaskService" -->
+  <!--     class=".service.JobsOverview" -->
+  <!--     permission="zope.ManageContent" -->
+  <!--     menu="zmi_views" title="Jobs" -->
+  <!--     /> -->
 
-  <page
-      name="detail"
-      for="..interfaces.IJob"
-      permission="zope.ManageContent"
-      class=".job.JobDetail"
-      />
+  <!-- <page -->
+  <!--     name="detail" -->
+  <!--     for="..interfaces.IJob" -->
+  <!--     permission="zope.ManageContent" -->
+  <!--     class=".job.JobDetail" -->
+  <!--     /> -->
 
-  <page
-      name="detail"
-      for="..interfaces.ICronJob"
-      permission="zope.Public"
-      class=".job.CronJobDetail"
-      />
+  <!-- <page -->
+  <!--     name="detail" -->
+  <!--     for="..interfaces.ICronJob" -->
+  <!--     permission="zope.Public" -->
+  <!--     class=".job.CronJobDetail" -->
+  <!--     /> -->
 
-  <page
-      name="editjob"
-      for="..interfaces.ICronJob"
-      permission="zope.ManageContent"
-      class=".job.CronJobEdit"
-      menu="zmi_views" title="edit"
-      />
+  <!-- <page -->
+  <!--     name="editjob" -->
+  <!--     for="..interfaces.ICronJob" -->
+  <!--     permission="zope.ManageContent" -->
+  <!--     class=".job.CronJobEdit" -->
+  <!--     menu="zmi_views" title="edit" -->
+  <!--     /> -->
 
-  <page
-      name="addcronjob.html"
-      for="..interfaces.ITaskService"
-      class=".job.AddCronJob"
-      permission="zope.ManageContent"
-      menu="zmi_views" title="add cron"
-      />
+  <!-- <page -->
+  <!--     name="addcronjob.html" -->
+  <!--     for="..interfaces.ITaskService" -->
+  <!--     class=".job.AddCronJob" -->
+  <!--     permission="zope.ManageContent" -->
+  <!--     menu="zmi_views" title="add cron" -->
+  <!--     /> -->
 
   <!-- traverser for the site -->
   <zope:view

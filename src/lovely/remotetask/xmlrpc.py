@@ -13,7 +13,7 @@
 ##############################################################################
 """Task Service Implementation
 
-$Id$
+$Id: xmlrpc.py 69474 2006-08-14 14:42:14Z srichter $
 """
 __docformat__ = 'restructuredtext'
 
